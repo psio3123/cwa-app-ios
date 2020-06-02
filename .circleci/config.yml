@@ -4,6 +4,7 @@ jobs:
   build-and-test:
     macos:
       xcode: 11.5.0
+    shell: zsh
 
     steps:
       - checkout
