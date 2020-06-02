@@ -33,6 +33,7 @@ jobs:
           command: cd src/xcode && bundle exec fastlane snapshot
       - store_artifacts:
           path: src/xcode/screenshots
+
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.1
 workflows:
