@@ -16,7 +16,11 @@ jobs:
       - run:
           name: Tests
           command: cd src/xcode && bundle exec fastlane test
-      - sonarcloud/scan
+      - sonarcloud/scan-on-branch-commit:
+          cache-version: v0
+          github-project-slug: corona-warn-app/cwa-app-ios
+          project-key: corona-warn-app_cwa-app-ios
+          os: macosx
       - store_test_results:
           path: src/xcode/fastlane/test_output
       - store_artifacts:
@@ -35,7 +39,7 @@ jobs:
           path: src/xcode/screenshots
 
 orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
+  sonarcloud: socialtables/sonarcloud@1.1.1
 workflows:
     default:
       jobs:
