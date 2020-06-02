@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
 
 jobs:
   build-and-test:
@@ -13,15 +11,16 @@ jobs:
           name: Install dependencies
           command: brew install swiftlint && cd src/xcode && bundle install
       - run:
-        name: Build
-        command: cd src/xcode && bundle exec fastlane build
+          name: Build
+          command: cd src/xcode && bundle exec fastlane build
       - run:
-        name: Tests
-        command: cd src/xcode && bundle exec fastlane test
+          name: Tests
+          command: cd src/xcode && bundle exec fastlane test
+      - sonarcloud/scan
       - store_test_results:
-        path: src/xcode/fastlane/test_output
+          path: src/xcode/fastlane/test_output
       - store_artifacts:
-        path: src/xcode/fastlane/test_output
+          path: src/xcode/fastlane/test_output
 
   grab-screenshots:
     macos:
@@ -30,12 +29,12 @@ jobs:
       - checkout
       - run: cd src/xcode && bundle install
       - run:
-        name: Snapshots
-        command: cd src/xcode && bundle exec fastlane snapshot
-      - sonarcloud/scan
+          name: Snapshots
+          command: cd src/xcode && bundle exec fastlane snapshot
       - store_artifacts:
-        path: src/xcode/screenshots
-
+          path: src/xcode/screenshots
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.1
 workflows:
     default:
       jobs:
