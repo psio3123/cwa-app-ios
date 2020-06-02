@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.1
 
 jobs:
   build-and-test:
@@ -33,9 +35,7 @@ jobs:
       - sonarcloud/scan
       - store_artifacts:
         path: src/xcode/screenshots
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
-version: 2.1
+
 workflows:
     default:
       jobs:
