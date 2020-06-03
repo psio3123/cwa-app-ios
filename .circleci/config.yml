@@ -26,7 +26,7 @@ jobs:
           path: src/xcode/screenshots
 
 orbs:
-  sonarcloud: tkowark/sonarcloud@0.0.4
+  sonarcloud: tkowark/sonarcloud@0.0.5
 workflows:
     default:
       jobs:
