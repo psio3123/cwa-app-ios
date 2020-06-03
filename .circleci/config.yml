@@ -19,6 +19,7 @@ jobs:
           command: cd src/xcode && bundle exec fastlane test
       - sonarcloud/install-cli:
           os: macosx
+          no-cache: true
       - sonarcloud/scan-on-branch-commit:
           cache-version: v42
           github-project-slug: corona-warn-app/cwa-app-ios
