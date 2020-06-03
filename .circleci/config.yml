@@ -21,7 +21,7 @@ jobs:
           os: macosx
           no-cache: true
       - sonarcloud/scan-on-branch-commit:
-          cache-version: v42
+          cache-version: v84
           github-project-slug: corona-warn-app/cwa-app-ios
           project-key: corona-warn-app_cwa-app-ios
       - store_test_results:
