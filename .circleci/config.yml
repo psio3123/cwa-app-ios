@@ -28,5 +28,4 @@ orbs:
 workflows:
     default:
       jobs:
-        - build-and-test:
-          context: sonarcloud        
+        - build-and-test   
