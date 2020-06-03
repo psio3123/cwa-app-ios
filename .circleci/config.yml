@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - checkout
-      - sonarcloud/scan
+      - sonarcloud/scan:
           os: macosx
 
   grab-screenshots:
