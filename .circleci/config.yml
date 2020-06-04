@@ -19,6 +19,7 @@ jobs:
           command: cd src/xcode && bundle exec fastlane test
       - sonarcloud/scan:
           os: macosx
+          cache_version:
       - store_test_results:
           path: src/xcode/fastlane/test_output
       - store_artifacts:
@@ -37,7 +38,7 @@ jobs:
           path: src/xcode/screenshots
 
 orbs:
-  sonarcloud: tkowark/sonarcloud@0.2.5
+  sonarcloud: tkowark/sonarcloud2@0.1.0
 workflows:
     default:
       jobs:
