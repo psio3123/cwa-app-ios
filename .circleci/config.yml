@@ -31,7 +31,7 @@ jobs:
       - store_artifacts:
           path: coverage.xml
       - store_artifacts:
-          path: src/xcode/fastlane/swiftlint.result.json
+          path: src/xcode/swiftlint.result.json
 
   grab-screenshots:
     macos:
