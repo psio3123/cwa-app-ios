@@ -17,6 +17,9 @@ jobs:
       - run:
           name: Tests
           command: cd src/xcode && bundle exec fastlane test
+      - run:
+          command: |
+            ./xcov_to_sonarqube_generic.sh src/xcode/fastlane/test_output/*.xccovarchive/ > coverage.xml
       - sonarcloud/scan:
           os: macosx
           version: 4.3.0.2102
