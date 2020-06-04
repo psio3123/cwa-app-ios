@@ -10,8 +10,6 @@ jobs:
       - checkout
       - sonarcloud/scan:
           os: macosx
-          gh_project_slug: corona-warn-app/cwa-app-ios
-          project_key: corona-warn-app_cwa-app-ios
 
   grab-screenshots:
     macos:
@@ -26,8 +24,8 @@ jobs:
           path: src/xcode/screenshots
 
 orbs:
-  sonarcloud: tkowark/sonarcloud@0.0.5
+  sonarcloud: tkowark/sonarcloud@0.2.5
 workflows:
     default:
       jobs:
-        - build-and-test   
+        - build-and-test
