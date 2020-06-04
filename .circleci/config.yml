@@ -21,6 +21,7 @@ jobs:
           name: Convert coverage information to SonarQube format
           command: |
             ./xcov_to_sonarqube_generic.sh src/xcode/fastlane/test_output/*.xccovarchive/ > coverage.xml
+            sed -i "" 's|/Users/distiller/project/||' coverage.xml
       - sonarcloud/scan:
           os: macosx
           version: 4.3.0.2102
